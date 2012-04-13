@@ -10,9 +10,6 @@ Rawr is a micro WSGI/REST framework designed for simplicity and speed. Run behin
 
 @pre
 Requires Python 2.7 and webob
-
-@todo
-Turn this into an installable package (?) so it can be shared between components
 """
 
 import httplib
@@ -71,12 +68,12 @@ class Request(webob.Request):
   def get_optional_param(self, param_name, default_value = None):
     # Note: This approach should be more efficient than handling exceptions...
     # but only if it is common to not have this param  
-    return self.GET[param_name] if param_name in self.GET else default_value
+    return self.GET[param_name].encode("utf_8") if param_name in self.GET else default_value
     
   # Returns the specified query string parameter or throws an HttpException if not found
   def get_param(self, param_name):
     try:
-      return self.GET[param_name]
+      return self.GET[param_name].encode("utf_8")
     except:
       raise HttpBadRequest('Missing query parameter: %s' % param_name)
     
