@@ -1,6 +1,6 @@
 {
   "name": "Rackspace Py",
-  "description": "a small collection of handy Python libraries, notably a very fast WSGI micro-framework and an in-process token cache",
+  "description": "A small collection of handy Python libraries, notably a very fast WSGI micro-framework and an in-process token cache",
   "devops_version": "0.2",
   "devopsJSON_URL": "https://github.rackspace.com/atl/rax-py/edit/master/devops.json",
   "tags": [
