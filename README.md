@@ -6,7 +6,7 @@ Rackspace Py is a small collection of handy Python libraries, including:
 * Fastcache, a very fast in-process cache for expiring objects, such as auth tokens
 
 
-## RSE Dependencies
+## Dependencies
 
 * Python 2 (2.6 or better)
 * WebOb
