@@ -101,3 +101,7 @@ class HttpBadGateway(HttpError):
   def __init__(self):
     HttpError.__init__(self, 502)
 
+# 503 Service Unavailable
+class HttpServiceUnavailable(HttpError):
+  def __init__(self):
+    HttpError.__init__(self, 503)
