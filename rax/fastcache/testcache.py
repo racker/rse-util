@@ -30,7 +30,7 @@ class TestCache(unittest.TestCase):
   """
   def test_many_values(self):
 
-    for x in range(1,1000000):
+    for x in xrange(1,1000000):
       self.c.cache(str(x))
       self.assertTrue(self.c.is_cached(str(x)))
       self.assertFalse(self.c.is_cached(str(x+1))) 
@@ -50,7 +50,7 @@ class TestCache(unittest.TestCase):
     self.c.integrity_check() 
 
     # Now all of the original values should have been removed. 
-    for x in range(1,1000000):
+    for x in xrange(1,1000000):
       self.assertFalse(self.c.is_cached(str(x)))
     
     self.c.integrity_check() 
