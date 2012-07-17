@@ -66,7 +66,7 @@ class FastCache:
     self._values = {} # Holds the values
     self._time_hash = [] # Holds the values indexed by time
     
-    for x in range(0, self._slice_count):
+    for x in xrange(0, self._slice_count):
       self._time_hash.append([])
  
   """
@@ -83,7 +83,7 @@ class FastCache:
   def integrity_check(self):
     item_count = 0
 
-    for slice_index in range(0, self._slice_count):
+    for slice_index in xrange(0, self._slice_count):
       item_count += len(self._time_hash[slice_index])
 
     if item_count != len(self._values):
@@ -111,7 +111,7 @@ class FastCache:
         slice_delta = self._slice_count + slice_delta
 
       if slice_delta > 0:
-        for x in range(self._last_slice+1, self._last_slice + slice_delta + 1):
+        for x in xrange(self._last_slice+1, self._last_slice + slice_delta + 1):
           s = x % self._slice_count
           self._clear_slice(s)
         
