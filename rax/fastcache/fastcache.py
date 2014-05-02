@@ -65,11 +65,10 @@ class FastCache:
     def clear(self):
         """ Clears all cached values """
         # todo clear all
-        self._values = {}  # Holds the values
-        self._time_hash = []  # Holds the values indexed by time
+        self._values = dict()  # Holds the values
+        self._time_hash = list()  # Holds the values indexed by time
 
-        for x in xrange(0, self._slice_count):
-            self._time_hash.append([])
+        self._time_hash = [list() for _ in xrange(0, self._slice_count)]
 
     def count(self):
         """Returns the total number of cached objects """
@@ -126,7 +125,7 @@ class FastCache:
             delete_count += 1
 
         assert(len(self._time_hash[slice_index]) == delete_count)
-        self._time_hash[slice_index] = []
+        self._time_hash[slice_index] = list()
 
     def _timetoslice(self, t):
         """Converts specified time to a slice index"""
