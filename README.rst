@@ -1,6 +1,8 @@
 Rackspace Py
 ============
 
+**NOTE: This repo is no longer used and kept only for historical purposes**
+
 Rackspace Py is a small collection of handy Python libraries, including:
 
 -  Rawr, a micro WSGI framework designed for speed and simplicity
